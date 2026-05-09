@@ -384,6 +384,127 @@ pip install pandas numpy
 python transcript_intelligence_notebook.py
 ```
 
+## Output
+```
+(venv) arshad@Arshads-MacBook-Pro transcript-intelligence % python transcript_intelligence.py
+Loaded 100 calls
+
+Call type distribution:
+call_type
+external    39
+support     32
+internal    29
+Name: count, dtype: int64
+
+Theme distribution across all calls:
+Compliance & Audit             68
+Incident Response              55
+Renewal & Retention            41
+Product Planning               37
+Integration & Backup           36
+Threat Detection               34
+Product Feedback & Strategy    24
+Identity & Access              23
+Billing & Licensing            13
+Onboarding & Adoption          10
+Team Sync                      10
+Name: count, dtype: int64
+
+Sentiment score by call type:
+call_type
+external    3.90
+internal    3.48
+support     2.77
+Name: sentiment_score, dtype: float64
+
+Sentiment label distribution by call type:
+overall_sentiment  mixed-negative  mixed-positive  negative  positive  very-negative  very-positive
+call_type                                                                                          
+external                        9              13         0         3              0             14
+internal                        7              11         2         4              0              5
+support                        17               9         2         0              2              2
+
+Sentiment by theme (avg score):
+Threat Detection               2.83
+Incident Response              2.90
+Renewal & Retention            3.14
+Product Feedback & Strategy    3.42
+Team Sync                      3.46
+Identity & Access              3.60
+Compliance & Audit             3.63
+Integration & Backup           3.64
+Billing & Licensing            3.69
+Product Planning               3.81
+Onboarding & Adoption          4.70
+dtype: float64
+
+Churn risk distribution (external calls only):
+churn_risk
+High      17
+Medium    16
+Low        6
+Name: count, dtype: int64
+
+Detect outage-related calls: 9
+                                                                title call_type  sentiment_score overall_sentiment
+1                                 Detect Outage - Root Cause Analysis  internal              2.4    mixed-negative
+5                                   Detect Outage - Escalation Bridge  internal              1.8          negative
+7   ESCALATION: Northstar Pharma - Detect Outage Impact on Compliance   support              2.1    mixed-negative
+12                         Detect Outage - Customer Impact Assessment  internal              1.8          negative
+22                               Detect Outage - Post-Incident Review  internal              2.8    mixed-negative
+32              URGENT: Cobalt Software - Aegis Detect Dashboard Down   support              1.8          negative
+66                       INCIDENT: Detect Pipeline Failure - War Room   support              1.8          negative
+70                            Detect Outage - Remediation Plan Review  internal              2.4    mixed-negative
+73            Aegis / Northstar Pharma - Urgent: Detect Outage Impact   support              2.1    mixed-negative
+
+Avg speakers by call type:
+call_type
+external    2.9
+internal    3.8
+support     2.7
+Name: num_speakers, dtype: float64
+
+Avg duration by call type (minutes):
+call_type
+external    38.5
+internal    31.4
+support     19.3
+Name: duration, dtype: float64
+
+Avg dominant speaker % by call type:
+call_type
+external    47.6
+internal    39.3
+support     50.9
+Name: dominant_speaker_pct, dtype: float64
+
+Action items by call type:
+           count      mean       std  min  25%  50%  75%  max
+call_type                                                    
+external    39.0  3.948718  0.223456  3.0  4.0  4.0  4.0  4.0
+internal    29.0  4.000000  0.000000  4.0  4.0  4.0  4.0  4.0
+support     32.0  3.968750  0.176777  3.0  4.0  4.0  4.0  4.0
+
+Sample action items from: Aegis / Summit Trust - Platform Concerns Discussion
+  → Maria Santos: Escalate the open MFA ticket today and provide Alicia with a real status update by end of day
+  → Maria Santos: Schedule a technical Identity specialist call for next week and deliver a written summary with accountable action items, owners, and timelines afterward
+  → Maria Santos: Send Alicia a formal post-incident report on the March Detect outage and arrange an engineering briefing for her CISO on the architecture changes
+  → Maria Santos: Develop a formal remediation plan for all Aegis Identity issues including MFA enforcement, session timeout behavior, and support response quality
+
+======================================================================
+KEY FINDINGS SUMMARY
+======================================================================
+Total calls analyzed: 100
+Call types: {'external': 39, 'support': 32, 'internal': 29}
+Avg sentiment - External: 3.90
+Avg sentiment - Internal: 3.48
+Avg sentiment - Support:  2.77
+Negative calls (≤2.5): 31 (31%)
+High churn risk accounts: 17
+Total action items: 397
+Most common theme: Compliance & Audit
+(venv) arshad@Arshads-MacBook-Pro transcript-intelligence % 
+```
 ---
 
 # Future Improvements
