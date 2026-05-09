@@ -386,7 +386,7 @@ python transcript_intelligence_notebook.py
 
 ## Output
 ```
-(venv) arshad@Arshads-MacBook-Pro transcript-intelligence % python transcript_intelligence.py
+(venv) arshad@Arshads-MacBook-Pro transcript-intelligence % python transcript_intelligence_notebook.py
 Loaded 100 calls
 
 Call type distribution:
