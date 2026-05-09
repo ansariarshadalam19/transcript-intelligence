@@ -381,7 +381,7 @@ pip install pandas numpy
 ## Run Analysis
 
 ```bash
-python analysis.py
+python transcript_intelligence_notebook.py
 ```
 
 ---
